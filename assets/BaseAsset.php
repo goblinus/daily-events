@@ -2,6 +2,7 @@
 namespace app\assets;
 
 use yii\web\AssetBundle;
+use yii\web\View;
 
 /**
  * Class BaseAsset
@@ -22,6 +23,16 @@ class BaseAsset extends AssetBundle
         'css/bootstrap.css',
         'css/bootstrap-responsive.css',
         'css/dailyevents.css',
+    ];
+
+    /** @var array $jsOptions params to publish js files in document's head */
+    public $jsOptions = [
+        'position' => View::POS_HEAD,
+    ];
+
+    /** @var array $cssOptions params to publish css files in document's head */
+    public $cssOptions = [
+        'position' => View::POS_HEAD,
     ];
 
     /** @var array $js javascript files to include */

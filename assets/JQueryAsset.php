@@ -18,6 +18,12 @@ class JQueryAsset extends AssetBundle
     public $baseUrl     = '@web';
 
 
+    /** @var array $jsOptions params to publish js files in document's head */
+    public $jsOptions = [
+        'position' => View::POS_HEAD,
+    ];
+
+
     /** @var array $js javascript files to include */
     public $js = [
         'js/jquery-2.2.0.js',
