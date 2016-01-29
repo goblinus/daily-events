@@ -8,20 +8,14 @@ class m160126_104837_rss_db extends Migration
     {
         //////////////////////////////CREATE TABLES /////////////////////////////
 
+        $this->createTableEvents();
+        $this->insertDataIntoEvents();
+
         $this->createTableSources();
         $this->insertDataIntoSources();
         
         $this->createTableChannels();
         $this->insertDataIntoChannels();
-
-        /*$this->createTable('texts', [
-            'text_id'    => $this->primaryKey(),
-            'channel_id' => $this->integer(11),
-            'created_at' => $this->dateTime()->notNull(),
-            'updated_at' => $this->dateTime()->notNull(),
-            'published_at' => $this->dateTime()->notNUll(),
-            'content'    => $this->text(),
-        ]);*/
 
     }
 
@@ -43,6 +37,23 @@ class m160126_104837_rss_db extends Migration
     }
     */
 
+
+    protected function createTableEvents()
+    {
+        $this->execute("DROP TABLE IF EXISTS events");
+        $this->execute("
+            CREATE TABLE events (
+                event_id 	INT(11) NOT NULL UNIQUE AUTO_INCREMENT,
+                title		VARCHAR(999) NOT  NULL,
+                created_at	DATETIME NOT NULL,
+                updated_at  DATETIME NOT NULL DEFAULT NOW(),
+                description	TEXT,
+                info        TEXT,
+                PRIMARY KEY(event_id)
+            ) ENGINE=InnoDB DEFAULT CHARSET = 'utf8' COLLATE utf8_general_ci
+        ");
+    }
+
     protected function createTableSources()
     {
         $this->execute("DROP TABLE IF EXISTS sources");
@@ -54,6 +65,14 @@ class m160126_104837_rss_db extends Migration
                 PRIMARY KEY(source_id)
             ) ENGINE=InnoDB DEFAULT CHARSET = 'utf8' COLLATE utf8_general_ci
         ");
+    }
+
+    protected function insertDataIntoEvents()
+    {
+        $this->batchInsert('events', ['title', 'created_at', 'description', 'info'], [
+            ['Заседание Совета директоров Банка России', '2016-01-29 12:00:00', 'Принято решение о сохранении ключевой ставке в размере 11% годовых. В связи со снижением мировых цен на нефть заявлено о высокой вероятности увеличения уровня инфляции в России и об ужесточения денежно-кредитной политики ЦБ РФ в этой связи', ''],
+            ['Заседание Правительства РФ', '2016-01-21 12:00:00', 'Принято решение о продлении бесплатной приватизации жилья для граждан РФ сроком до 1 марта 2017 года', 'В настоящее время в государственной собственности находится 20% жилого фонда'],
+        ]);
     }
 
     protected function insertDataIntoSources()
