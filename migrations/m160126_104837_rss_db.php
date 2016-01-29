@@ -126,6 +126,7 @@ class m160126_104837_rss_db extends Migration
             [65,'Двина. Издательский дом','http://www.dvina29.ru/'],
             [66,'Военное-промышленный курьер. Общероссийская еженедельная газета','http://www.vpk-news.ru/'],
             [67,'Краснодарский край. Общественно-политическое издание','http://www.krasnodar-region.com/'],
+            [68, 'The Washington Free Beacon', 'http://freebeacon.com/']
         ]);
     }
 
@@ -345,7 +346,8 @@ class m160126_104837_rss_db extends Migration
             [192,64,NULL,NULL,NULL,0,'http://echospb.ru/rss/articles/?type=1&city=1'],
             [193,65,NULL,NULL,NULL,0,'http://www.dvina29.ru/gazeta-arkhangelsk-side?format=feed'],
             [194,66,NULL,NULL,NULL,0,'http://www.vpk-news.ru/feed'],
-            [195,67,NULL,NULL,NULL,0,'http://krasnodar-region.com/index.php?option=com_ninjarsssyndicator&feed_id=1&format=raw']
+            [195,67,NULL,NULL,NULL,0,'http://krasnodar-region.com/index.php?option=com_ninjarsssyndicator&feed_id=1&format=raw'],
+            [196,68,NULL,NULL,NULL,0,'http://freebeacon.com/feed/'],
         ]);
     }
 }
