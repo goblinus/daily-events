@@ -13,7 +13,7 @@ class m160126_104837_rss_db extends Migration
 
         $this->createTableSources();
         $this->insertDataIntoSources();
-        
+
         $this->createTableChannels();
         $this->insertDataIntoChannels();
 
@@ -145,7 +145,17 @@ class m160126_104837_rss_db extends Migration
             [65,'Двина. Издательский дом','http://www.dvina29.ru/'],
             [66,'Военное-промышленный курьер. Общероссийская еженедельная газета','http://www.vpk-news.ru/'],
             [67,'Краснодарский край. Общественно-политическое издание','http://www.krasnodar-region.com/'],
-            [68, 'The Washington Free Beacon', 'http://freebeacon.com/']
+            [68,'The Washington Free Beacon','http://freebeacon.com/'],
+            [69,'Fox News','http://www.foxnews.com/'],
+            [70,'The Huffington Post','http://www.huffingtonpost.com/'],
+            [71,'The Washington Post','https://www.washingtonpost.com/'],
+            [72,'The Guardian','http://www.theguardian.com/'],
+            [73,'The BBC News','http://feeds.bbci.co.uk/news/'],
+            [74,'The Wall Street Journal','http://www.wsj.com/'],
+            [75,'The Reuters','http://www.reuters.com/'],
+            [76,'ABC News','http://abcnews.com/'],
+            [77,'Time','http://time.com/'],
+            [78,'CBC News','http://www.cbsnews.com/'],
         ]);
     }
 
@@ -157,10 +167,10 @@ class m160126_104837_rss_db extends Migration
                 channel_id  INT(11) NOT NULL UNIQUE AUTO_INCREMENT,
                 source_id   INT(11) NOT NULL,
                 last_hash   VARCHAR(999),
-                updated_at  DATETIME,        
+                updated_at  DATETIME,
                 update_at   DATETIME,
                 processed   TINYINT(1) NOT NULL DEFAULT 0,
-                uri         VARCHAR(999) NOT NULL,                
+                uri         VARCHAR(999) NOT NULL,
                 PRIMARY KEY(channel_id),
                 FOREIGN KEY(source_id) REFERENCES sources(source_id) ON DELETE CASCADE
             ) ENGINE=InnoDB DEFAULT CHARSET = 'utf8' COLLATE utf8_general_ci
@@ -367,6 +377,42 @@ class m160126_104837_rss_db extends Migration
             [194,66,NULL,NULL,NULL,0,'http://www.vpk-news.ru/feed'],
             [195,67,NULL,NULL,NULL,0,'http://krasnodar-region.com/index.php?option=com_ninjarsssyndicator&feed_id=1&format=raw'],
             [196,68,NULL,NULL,NULL,0,'http://freebeacon.com/feed/'],
+            [197,69,NULL,NULL,NULL,0,'http://feeds.foxnews.com/foxnews/politics?format=xml'],
+            [198,70,NULL,NULL,NULL,0,'http://www.huffingtonpost.com/feeds/original_posts/index.xml'],
+            [199,71,NULL,NULL,NULL,0,'http://feeds.washingtonpost.com/rss/world'],
+            [200,71,NULL,NULL,NULL,0,'http://feeds.washingtonpost.com/rss/politics'],
+            [201,71,NULL,NULL,NULL,0,'http://feeds.washingtonpost.com/rss/national'],
+            [202,71,NULL,NULL,NULL,0,'http://feeds.washingtonpost.com/rss/business'],
+            [203,72,NULL,NULL,NULL,0,'http://www.theguardian.com/uk-news/rss'],
+            [204,72,NULL,NULL,NULL,0,'http://www.theguardian.com/world/rss'],
+            [205,72,NULL,NULL,NULL,0,'http://www.theguardian.com/uk/business/rss'],
+            [206,73,NULL,NULL,NULL,0,'http://feeds.bbci.co.uk/news/world/rss.xml'],
+            [206,73,NULL,NULL,NULL,0,'http://feeds.bbci.co.uk/news/uk/rss.xml'],
+            [207,73,NULL,NULL,NULL,0,'http://feeds.bbci.co.uk/news/business/rss.xml'],
+            [208,74,NULL,NULL,NULL,0,'http://www.wsj.com/xml/rss/3_7031.xml'],
+            [209,74,NULL,NULL,NULL,0,'http://www.wsj.com/xml/rss/3_7014.xml'],
+            [210,74,NULL,NULL,NULL,0,'http://www.wsj.com/xml/rss/3_7085.xml'],
+            [211,75,NULL,NULL,NULL,0,'http://feeds.reuters.com/reuters/businessNews?format=xml'],
+            [212,75,NULL,NULL,NULL,0,'http://feeds.reuters.com/reuters/companyNews?format=xml'],
+            [212,75,NULL,NULL,NULL,0,'http://feeds.reuters.com/news/wealth?format=xml'],
+            [212,75,NULL,NULL,NULL,0,'http://feeds.reuters.com/news/reutersmedia?format=xml'],
+            [212,75,NULL,NULL,NULL,0,'http://feeds.reuters.com/Reuters/PoliticsNews?format=xml'],
+            [212,75,NULL,NULL,NULL,0,'http://feeds.reuters.com/reuters/bankruptcyNews?format=xml'],
+            [212,75,NULL,NULL,NULL,0,'http://feeds.reuters.com/news/economy?format=xml'],
+            [212,75,NULL,NULL,NULL,0,'http://feeds.reuters.com/reuters/globalmarketsNews?format=xml'],
+            [212,75,NULL,NULL,NULL,0,'http://feeds.reuters.com/reuters/governmentfilingsNews?format=xml'],
+            [213,76,NULL,NULL,NULL,0,'http://feeds.abcnews.com/abcnews/internationalheadlines'],
+            [214,76,NULL,NULL,NULL,0,'http://feeds.abcnews.com/abcnews/usheadlines'],
+            [215,76,NULL,NULL,NULL,0,'http://feeds.abcnews.com/abcnews/politicsheadlines'],
+            [216,76,NULL,NULL,NULL,0,'http://feeds.abcnews.com/abcnews/moneyheadlines'],
+            [217,77,NULL,NULL,NULL,0,'http://time.com/business/feed/'],
+            [218,77,NULL,NULL,NULL,0,'http://feeds.feedburner.com/time/business?format=xml'],
+            [219,77,NULL,NULL,NULL,0,'http://feeds.feedburner.com/time/topstories?format=xml'],
+            [220,78,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/main'],
+            [221,79,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/us'],
+            [222,80,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/politics'],
+            [223,80,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/world'],
+            [224,80,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/moneywatch'],
         ]);
     }
 }
