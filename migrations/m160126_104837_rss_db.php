@@ -156,6 +156,7 @@ class m160126_104837_rss_db extends Migration
             [76,'ABC News','http://abcnews.com/'],
             [77,'Time','http://time.com/'],
             [78,'CBC News','http://www.cbsnews.com/'],
+            [79,'The Daily Telegraph','http://www.telegraph.co.uk/'],
         ]);
     }
 
@@ -165,6 +166,8 @@ class m160126_104837_rss_db extends Migration
         $this->execute("
             CREATE TABLE channels (
                 channel_id  INT(11) NOT NULL UNIQUE AUTO_INCREMENT,
+                title       VARCHAR(999),
+                description TEXT,
                 source_id   INT(11) NOT NULL,
                 last_hash   VARCHAR(999),
                 updated_at  DATETIME,
@@ -409,10 +412,12 @@ class m160126_104837_rss_db extends Migration
             [218,77,NULL,NULL,NULL,0,'http://feeds.feedburner.com/time/business?format=xml'],
             [219,77,NULL,NULL,NULL,0,'http://feeds.feedburner.com/time/topstories?format=xml'],
             [220,78,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/main'],
-            [221,79,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/us'],
-            [222,80,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/politics'],
-            [223,80,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/world'],
-            [224,80,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/moneywatch'],
+            [221,78,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/us'],
+            [222,78,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/politics'],
+            [223,78,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/world'],
+            [224,78,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/moneywatch'],
+            [225,79,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/rss'],
+            [226,79,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/news/rss'],            
         ]);
     }
 }
