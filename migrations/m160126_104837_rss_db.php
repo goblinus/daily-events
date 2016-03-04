@@ -157,6 +157,7 @@ class m160126_104837_rss_db extends Migration
             [77,'Time','http://time.com/'],
             [78,'CBC News','http://www.cbsnews.com/'],
             [79,'The Daily Telegraph','http://www.telegraph.co.uk/'],
+	    	[80,'The New York Times','http://www.nytimes.com'],
         ]);
     }
 
@@ -417,7 +418,8 @@ class m160126_104837_rss_db extends Migration
             [223,78,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/world'],
             [224,78,NULL,NULL,NULL,0,'http://www.cbsnews.com/latest/rss/moneywatch'],
             [225,79,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/rss'],
-            [226,79,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/news/rss'],            
+            [226,79,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/news/rss'], 
+			[227,80,NULL,NULL,NULL,0,'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml'],           
         ]);
     }
 }
