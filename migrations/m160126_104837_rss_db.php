@@ -157,8 +157,9 @@ class m160126_104837_rss_db extends Migration
             [77,'Time','http://time.com/'],
             [78,'CBC News','http://www.cbsnews.com/'],
             [79,'The Daily Telegraph','http://www.telegraph.co.uk/'],
-	    [80,'The New York Times','http://www.nytimes.com'],
-	    [81,'Die Zeit','http://www.zeit.de/'],
+            [80,'The New York Times','http://www.nytimes.com'],
+            [81,'Die Zeit','http://www.zeit.de/'],
+            [82,'The Telegraph', 'http://www.telegraph.co.uk'],
         ]);
     }
 
@@ -423,7 +424,11 @@ class m160126_104837_rss_db extends Migration
 			[227,80,NULL,NULL,NULL,0,'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml'], 
 			[228,81,NULL,NULL,NULL,0,'http://newsfeed.zeit.de/index'],
 			[229,81,NULL,NULL,NULL,0,'http://newsfeed.zeit.de/politik/index'],
-			[230,81,NULL,NULL,NULL,0,'http://newsfeed.zeit.de/wirtschaft/index'],          
+			[230,81,NULL,NULL,NULL,0,'http://newsfeed.zeit.de/wirtschaft/index'],
+            [231,82,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/news/rss'],
+            [232,82,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/news/worldnews/rss'],
+            [233,82,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/comment/rss'],     
+            [234,82,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/technology/rss'],     
         ]);
     }
 }
