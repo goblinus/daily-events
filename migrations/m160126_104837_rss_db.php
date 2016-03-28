@@ -160,6 +160,7 @@ class m160126_104837_rss_db extends Migration
             [80,'The New York Times','http://www.nytimes.com'],
             [81,'Die Zeit','http://www.zeit.de/'],
             [82,'The Telegraph', 'http://www.telegraph.co.uk'],
+            [83,'Информационное агентство "Регнум"','http://regnum.ru/']
         ]);
     }
 
@@ -428,7 +429,14 @@ class m160126_104837_rss_db extends Migration
             [231,82,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/news/rss'],
             [232,82,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/news/worldnews/rss'],
             [233,82,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/comment/rss'],     
-            [234,82,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/technology/rss'],     
+            [234,82,NULL,NULL,NULL,0,'http://www.telegraph.co.uk/technology/rss'],
+            [235,83,NULL,NULL,NULL,0,'http://regnum.ru/rss/main'],     
+            [236,83,NULL,NULL,NULL,0,'http://regnum.ru/rss/polit'],
+            [237,83,NULL,NULL,NULL,0,'http://regnum.ru/rss/economy'],
+            [238,83,NULL,NULL,NULL,0,'http://regnum.ru/rss/society'],
+            [239,83,NULL,NULL,NULL,0,'http://regnum.ru/rss/accidents'],
+            [240,83,NULL,NULL,NULL,0,'http://regnum.ru/rss/russian'],
+            [241,83,NULL,NULL,NULL,0,'http://regnum.ru/rss/foreign'],
         ]);
     }
 }
