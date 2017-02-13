@@ -160,7 +160,8 @@ class m160126_104837_rss_db extends Migration
             [80,'The New York Times','http://www.nytimes.com'],
             [81,'Die Zeit','http://www.zeit.de/'],
             [82,'The Telegraph', 'http://www.telegraph.co.uk'],
-            [83,'Информационное агентство "Регнум"','http://regnum.ru/']
+            [83,'Информационное агентство "Регнум"','http://regnum.ru/'],
+	    [84, 'Луганск-1', 'http://lugansk1.info/']
         ]);
     }
 
@@ -437,6 +438,8 @@ class m160126_104837_rss_db extends Migration
             [239,83,NULL,NULL,NULL,0,'http://regnum.ru/rss/accidents'],
             [240,83,NULL,NULL,NULL,0,'http://regnum.ru/rss/russian'],
             [241,83,NULL,NULL,NULL,0,'http://regnum.ru/rss/foreign'],
+	    [242,84,NULL,NULL,NULL,0,'http://lugansk1.info/feed'],
+	    [243,84,NULL,NULL,NULL,0,'http://lugansk1.info/comments/feed']	
         ]);
     }
 }
